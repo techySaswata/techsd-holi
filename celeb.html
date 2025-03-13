@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="celeb.css">
+    <script src="celeb.js"></script>
+    <title>techSd-Holi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --clr: #0f0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            background: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 76%)), url(./img/image.png);
+            /* transform: scale(0.6); */
+            margin-top: 40px;
+        }
+
+        .container {
+            position: relative;
+            top: 100px;
+            height: 400px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            animation: animateColor 5s linear infinite;
+        }
+
+        @keyframes animateColor {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        .container .cloud {
+            position: relative;
+            width: 380px;
+            z-index: 100;
+            filter: drop-shadow(0 0 35px var(--clr));
+        }
+        .container .cloud h2 {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            color: #000;
+            font-size: 2em;
+            z-index: 1000;
+            font-weight: 400;
+            padding: 0 10px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            background: var(--clr);
+        }
+
+        .container .cloud h2::before {
+            content: '';
+            position: absolute;
+            top: -115px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 100px;
+            width: 120%;
+            height: 100px;
+            background: var(--clr);
+        }
+
+        .container .cloud h2::after {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 25px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--clr);
+            box-shadow: 120px -30px 0 10px var(--clr);
+        }
+
+        .container .cloud .drop {
+            position: absolute;
+            top: 60px;
+            height: 20px;
+            line-height: 10pxpx;
+            color: var(--clr);
+            transform-origin: bottom;
+            animation: animate 2s linear infinite;
+        }
+
+        @keyframes animate {
+            0% { transform: translateY(0) scaleY(0); transform-origin: top; }
+            10% { transform: translateY(0) scaleY(0.25); transform-origin: top; }
+            20% { transform: translateY(0) scaleY(1); }
+            70% { transform: translateY(300px) scaleY(1); transform-origin: bottom; }
+            80% { transform: translateY(300px) scaleY(1); transform-origin: bottom; }
+            100% { transform: translateY(300px) scaleY(0); transform-origin: bottom; text-shadow: -180px 0 0 var(--clr), 180px 0 var(--clr); }
+        }
+
+        .inner-circle {
+            height: 180px;
+            width: 180px;
+            position: absolute;
+            background: url('./img/srija.jpeg');
+            background-size: cover;
+            top: 10px;
+            left: 10px;
+            border-radius: 50%;
+            z-index: 9;
+        }
+        
+        .box-c {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1, .box2, .box3 {
+            width: 300px;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .outer-circle {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+            border-radius: 50%;
+            animation: rotate 1.5s linear infinite;
+        }
+
+        .outer-circle span {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+            border-radius: 50%;
+        }
+
+
+
+
+        @keyframes rotate {
+            0% { filter: hue-rotate(0deg); }
+            /* 100% { filter: hue-rotate(360deg); } */
+        }
+        
+        .attribution {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 15px;
+            z-index: 1000;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 0.7px;
+        }
+    </style>
+</head>
+<body>
+<div class="bbl">
+    <label>
+        <span>Colorful</span>
+        <input type="checkbox"/>
+    </label>
+    <div id="bubbleGen"></div>
+</div>
+
+    <div class="box-c">
+        <div class="cirle-box">
+            <div class="outer-circle">
+                <div class="inner-circle"></div>
+                <!-- <span></span>
+                <span></span>
+                <span></span>
+                <span></span> -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="cloud">
+                <h2>Happy Holi</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attribution">by Saswata</div>
+
+    <script>
+        function randomText() {
+            var text = ["Ishika"];
+            return text[Math.floor(Math.random() * text.length)];
+        }
+
+        function rain() {
+            let cloud = document.querySelector('.cloud');
+            let e = document.createElement('div');
+            e.classList.add('drop');
+            cloud.appendChild(e);
+
+            let left = Math.floor(Math.random() * 300);
+            let size = Math.random() * 1.5;
+            let duration = Math.random() * 1;
+
+            e.innerText = randomText();
+            e.style.left = left + 'px';
+            e.style.fontSize = 0.5 + size + 'em';
+            e.style.animationDuration = 1 + duration + 's';
+
+            setTimeout(function () {
+                cloud.removeChild(e);
+            }, 5000);
+        }
+
+        setInterval(function () {
+            rain();
+        }, 150);
+    </script>
+    
+</body>
+</html>
