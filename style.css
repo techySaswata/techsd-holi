@@ -1,0 +1,76 @@
+html, body {
+    overflow: hidden;
+    padding: 50px;
+    color: #fff;
+    margin: 0;
+    height: 100%;
+  }
+  
+  body {
+    background: url(http://www.nhembram.com/images/happy_holi.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0.5;
+    opacity: 1;
+  }
+  
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 70px;
+    padding: 0;
+    letter-spacing: 2px;
+    font-family: 'Great Vibes', cursive;
+  }
+  
+  #nextPageButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  #nextPageButton:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(-50%) scale(1.05);
+  }
+  
+  p {
+    display: table;
+    margin: 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    z-index: 1;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
